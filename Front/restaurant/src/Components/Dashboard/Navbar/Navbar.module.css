@@ -1,0 +1,24 @@
+.darkorg{
+    color: var(--darkorg-color);
+font-family: var(--font-heading) ;}
+.darkorgbg{
+    background-color: var(--darkorg-color) !important;
+
+}
+.browncolor{
+
+    color: var(--brown-color) !important;
+}
+.custombtn{
+    font-size: 1.2rem !important;
+}
+.custombtn:hover{
+color: var(--darkorg-color) !important;
+}
+.bg{
+    background-color: var(--Neutral-color);
+}
+.font{
+    font-size: 1.2rem;
+    font-weight: 550;
+}

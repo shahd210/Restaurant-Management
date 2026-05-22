@@ -1,0 +1,48 @@
+.herosection{
+    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+     url(../../../assets/home.jpg);
+    background-position:center;
+    background-repeat: no-repeat;
+    background-size:cover;
+    height: 100vh;
+   
+}
+.h{
+    font-family: var(--font-heading) ;
+    font-weight: 650;
+    font-size: 5rem;
+}
+.custombtn{
+    background-color: var(--darkorg-color) ;
+    color: white;
+    padding: 1rem 2rem;
+    font-size: 1.3rem;
+    font-weight: 650;
+    border: none;
+    border-radius: 10px;
+    transition: all .3s ease;
+}
+.custombtn2{
+    transition: all .3s ease;
+    backdrop-filter: blur(6px);
+    background-color: rgba(255,255,255,0.1);
+     color: white;
+    padding: 1rem 2rem;
+    font-size: 1.3rem;
+    font-weight: 630;
+    border:1px solid  rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+}
+.custombtn:hover {
+    transform:translateY(-5px);
+    filter: brightness(1.175);
+}
+ .custombtn2:hover{
+  
+  transform: translateY(-5px);
+  background-color: rgba(255, 255, 255, 0.25);
+  
+  filter: brightness(1.5);
+}
+            
+

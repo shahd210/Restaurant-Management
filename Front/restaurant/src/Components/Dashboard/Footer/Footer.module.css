@@ -1,0 +1,40 @@
+.bg{
+    background-color: var(--Neutral-color);
+}
+.orgtext{
+    color: var(--darkorg-color);
+    font-family: var(--font-heading) ;
+}
+.brntext{
+    color:var(--brown-color)
+}
+.text_sm{
+    font-size: .9 rem;
+}
+li:hover{
+    color: var(--darkorg-color);
+    cursor: pointer;
+}
+li{
+    
+    color:var(--brown-color)
+}
+.custominput{
+    background-color: var(--lightgrey-color) !important;
+  
+}
+label{
+    font-size: 1.4rem;
+}
+.custombtn{
+    background-color: var(--darkorg-color);
+  
+    border-radius: 7px;
+    border: none;
+    font-size: 1.2rem;
+    
+}
+small{
+    color:var(--brown-color);
+   
+}

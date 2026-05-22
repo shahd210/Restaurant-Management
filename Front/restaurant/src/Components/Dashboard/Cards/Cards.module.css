@@ -1,0 +1,11 @@
+.cards{
+    background-color: var(--Neutrallight-color);
+    padding: 10rem;
+}
+.icon{
+    color: rgb(2, 70, 2);
+    background-color: rgb(184, 233, 184);
+    font-size: 1.7rem;
+    padding: 1rem 1.7rem;
+    border-radius: 50%;
+}
