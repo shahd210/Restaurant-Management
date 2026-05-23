@@ -1,0 +1,49 @@
+.customimg{
+ width: 100%;
+    height: 100vh;
+    object-fit: cover; 
+}
+.Loginpg{
+    background-color: var(  --Neutral-color);
+ padding: 6rem;
+}
+h3{
+    font-family: var(--font-heading);
+ color: var( --darkorg-color);
+}
+h4{
+    font-family: var(--font-heading);
+
+}
+.custominp{
+width: 90% ;
+border: none;
+ border-bottom: solid 1px #c7c5c1;
+background-color:  #FAFAF7;
+}
+label{
+    font-size: 1.1rem;
+    color: var(--brown-color);
+}
+input::placeholder{
+    font-size: 1.4rem;
+    color: rgb(189, 177, 177);
+}
+.custominp:hover,
+.custominp:focus
+{
+  outline: none ;
+    border-bottom: solid rgb(140, 140, 175);
+
+}
+.custombtn{
+    width: 90%;
+    background-color: var(--darkorg-color);
+    font-size: 1.2rem;
+    
+
+}
+.custombtn:hover {
+     background-color: var(--darkorg-color);
+     filter: brightness(1.2);
+}
