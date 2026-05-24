@@ -10,7 +10,7 @@
 .h{
     font-family: var(--font-heading) ;
     font-weight: 650;
-    font-size: 5rem;
+    
 }
 .custombtn{
     background-color: var(--darkorg-color) ;
