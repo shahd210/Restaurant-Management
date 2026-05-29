@@ -2,10 +2,12 @@ require("dotenv").config();
 
 const express = require("express");
 const app = express();
-
+const authRoutes =require("./routes/authRoutes")
 const dbconnection = require("./config/db")
 
 app.use(express.json());
+
+app.use("/auth" ,authRoutes);
 
 const morgan = require("morgan")
 if(process.env.NODE_ENV === "development"){
