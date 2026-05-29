@@ -43,7 +43,7 @@ const login = async (req ,res)=>{
          message:"Invalid email or password"
     });
 
-    const isMatched = await User.comparePassword(password);
+    const isMatched = await user.comparePassword(password);
     if(!isMatched) {
         return res.status(400).json({
             message:"Invalid email or password"
