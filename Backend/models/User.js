@@ -1,6 +1,5 @@
 const mongoose =require("mongoose")
 const bcrypt = require("bcrypt")
-const { required } = require("joi")
 
 const UserSchema = new mongoose.Schema({
     username:{

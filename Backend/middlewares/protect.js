@@ -20,7 +20,7 @@ const protect = async (req ,res , next)=>{
                message:"User not found"
             });
             }
-            req.user = decoded;
+            req.user = user;
             next();
         }else{
              return res.status(401).json({

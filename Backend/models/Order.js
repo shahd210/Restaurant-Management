@@ -1,6 +1,5 @@
 const mongoose = require("mongoose")
 const MenuItem = require("./MenuItem")
-const { required } = require("joi")
 
 const OrderSchema = new mongoose.Schema({
 user:{

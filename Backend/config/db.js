@@ -6,8 +6,9 @@ try {
     await mongoose.connect(process.env.MONGO_URL)
     console.log("DB is connected");
     
-} catch (error) {
-    console.log(error)
+}  catch (error) {
+    console.error("DB Connection Failed:", error.message)
+    process.exit(1);
 }
 }
 
