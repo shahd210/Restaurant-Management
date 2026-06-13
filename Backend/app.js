@@ -2,6 +2,7 @@ require("dotenv").config();
 const express = require("express");
 const app = express();
 const authRoutes =require("./routes/authRoutes")
+const menuRoutes = require("./routes/menuRoutes")
 const dbconnection = require("./config/db")
 const morgan = require("morgan")
 
@@ -18,7 +19,11 @@ dbconnection();
 
 //routes
 app.use("/api/auth" ,authRoutes);
+app.use("/api/menu",menuRoutes)
 
+
+const errorMiddleware =require("./middlewares/errorMiddleware")
+app.use(errorMiddleware)
 const port = process.env.PORT || 5000 ;
 app.listen(port , ()=>{
     console.log(`Server Is Running On Port ${port}`)

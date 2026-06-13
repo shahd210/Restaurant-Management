@@ -6,7 +6,7 @@ const ItemSchema = new mongoose.Schema({
         required:[true , "Name Is Required"],
         trim:true,
     },
-    Description:{
+    description:{
          type:String ,
         required:[true , "Description Is Required"],
     },
@@ -15,7 +15,7 @@ const ItemSchema = new mongoose.Schema({
         required:[true , "price Is Required"],
         min:[0 , "Price Cannot be negative"]
     },
-    categorey:{
+    category:{
         type:String,
         required:[true , "categorey Is Required"],
         enum:["starter", "main", "dessert", "drinks" ]

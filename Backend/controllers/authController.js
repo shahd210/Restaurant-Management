@@ -1,16 +1,16 @@
 const User = require("../models/User")
 const generateToken = require("../utils/generateToken")
 
-const register = async (req ,res )=>{
+const register = async (req ,res ,next )=>{
     try {
-        const {username , email , password} =req.body;
+        const {username , email , password,role} =req.body;
         const existingUser = await User.findOne({email});
         if(existingUser) return res.status(400).json({
             message:"User already exists"
         })
 
         const user = await User.create({
-            username, email , password
+            username, email , password ,role
         }) 
 
         const token = generateToken(user._id , user.role);
@@ -26,15 +26,13 @@ const register = async (req ,res )=>{
             }
         });
     } catch (error) {
-        res.status(500).json({
-            message:error.message
-        })
+        next(error)
     }
 
 }
 
 
-const login = async (req ,res)=>{
+const login = async (req ,res ,next)=>{
    try {
      const {email ,password}=req.body;
     const user = await User.findOne({email});
@@ -63,9 +61,7 @@ const login = async (req ,res)=>{
     }
   })  
    } catch (error) {
-    res.status(500).json({
-        message: error.message
-    })
+    next(error)
    }
 }
 
