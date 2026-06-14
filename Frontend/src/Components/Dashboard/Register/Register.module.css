@@ -1,5 +1,5 @@
 .page{
-    height: 100vh;
+    min-height: 100vh;
 }
 .customimg{
  width: 100%;
@@ -41,7 +41,7 @@ input::placeholder{
 
 }
 .custombtn{
-    width: 85%;
+    width: 83%;
     background-color: var(--darkorg-color);
     font-size: 1.2rem;
     

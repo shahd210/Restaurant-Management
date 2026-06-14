@@ -37,7 +37,7 @@ function Footer (){
                          <label htmlFor="floatingInput">Email address</label>
                 </div>
                 <div >
-                    <button className={`${styles.custombtn} py-2 fw-semibold text-white w-100`}>Subscribe</button>
+                    <button className={`${styles.custombtn} text-center py-2 fw-semibold text-white w-100`}>Subscribe</button>
                 </div>
               </div>
                 

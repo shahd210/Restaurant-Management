@@ -1,11 +1,17 @@
 require("dotenv").config();
 const express = require("express");
 const app = express();
+const cors = require("cors")
+
 const authRoutes =require("./routes/authRoutes")
 const menuRoutes = require("./routes/menuRoutes")
 const dbconnection = require("./config/db")
 const morgan = require("morgan")
 
+app.use(cors({
+    origin:"http://localhost:5173",
+    credentials:true
+}))
 //middlewares
 app.use(express.json());
 //loggger

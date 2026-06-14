@@ -1,0 +1,81 @@
+.wrapper{
+    overflow: hidden;
+    position: relative;
+    min-height: 100vh;
+}
+.formwrap{
+    width: 75%;
+}
+.customimg{
+
+height: 100vh;
+background-repeat: no-repeat;
+background-position: center;
+background-size: cover;
+background-image: url("../../../assets/Login.png");
+transition: transform .5s ease;
+
+}
+
+.wrapper:hover .customimg {
+    transform: scale(1.06);
+}
+.overlay{
+     position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+.content{
+    
+    z-index: 2;
+    position: absolute;
+   
+width: 60%;
+   bottom: 4rem  ;
+   left: 2rem;
+}
+.header{
+ color: rgb(175, 125, 133);
+ font-family: var(--font-heading);
+ font-weight: bold;
+
+}
+.quote{
+color: whitesmoke;
+font-style: italic;
+font-weight: 430;
+}
+.contain{
+    
+   cursor: pointer;
+    background-color:rgb(231, 227, 219);
+}
+button{
+    all: unset;
+}
+.bg{
+     min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--Neutral-color);
+}
+.fnorg{
+    color: var(--darkorg-color);
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+.fnhead{
+    font-family: var(--font-heading);
+}
+.page{
+     min-height: 100vh;
+}
+.fntmiddle{
+    font-size: 1.2rem;
+}
+.dktxt{
+    color: var( --darkorg-color);
+    
+}
