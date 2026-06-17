@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import styles from "./Herosection.module.css"
 
 function Herosection(){
@@ -9,8 +10,8 @@ function Herosection(){
     <h3 className="text-white fs-5 col-8 py-3 ">Experience world-class culinary artistry from the comfort of your home. Gourmet meals crafted by Michelin-starred chefs, delivered with uncompromising speed.</h3>
 
 <div className="d-flex gap-3 py-3">
-    <button className={`${styles.custombtn} `}>Order Now</button>
-    <button className={`${styles.custombtn2} `} >View Menu</button>
+    <NavLink to="order" className={`${styles.custombtn} text-decoration-none`}>Order Now</NavLink>
+    <NavLink to="menu" className={`${styles.custombtn2} text-decoration-none `} >View Menu</NavLink>
 </div>
 </div>
 
