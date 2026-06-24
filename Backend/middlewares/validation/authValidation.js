@@ -6,7 +6,6 @@ const registerSchema = joi.object({
     password: joi.string().min(6).required()
     .pattern(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)/)
     .message("Password must contain uppercase, lowercase, and a number"),
-    role: joi.string().valid("customer", "admin").optional()  
 
 });
 
