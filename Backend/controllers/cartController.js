@@ -1,4 +1,4 @@
-const menuItem =require("../models/MenuItem")
+const MenuItem =require("../models/MenuItem")
 const Cart =require("../models/Cart")
 
 const getCart = async (req,res,next)=>{
@@ -24,6 +24,22 @@ if(!cart){
     data: {...cart.toObject(),totalPrice },
    })
 
+    } catch (error) {
+        next(error)
+    }
+}
+const addToCart = async (req,res,next)=>{
+    try {
+        const { menuItemId , quantity} = req.body;
+
+         const menuItem = await MenuItem.findById(menuItemId);
+         if(!menuItem){
+            return res.status(404).json({
+                success:false,
+                message: "Menu item not found",
+            });
+         }
+         
     } catch (error) {
         next(error)
     }
