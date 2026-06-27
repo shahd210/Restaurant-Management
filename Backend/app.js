@@ -5,6 +5,9 @@ const cors = require("cors")
 
 const authRoutes =require("./routes/authRoutes")
 const menuRoutes = require("./routes/menuRoutes")
+const cartRoutes = require("./routes/cartRoutes")
+const orderRoutes = require("./routes/orderRoutes")
+
 const dbconnection = require("./config/db")
 const morgan = require("morgan")
 
@@ -25,8 +28,9 @@ dbconnection();
 
 //routes
 app.use("/api/auth" ,authRoutes);
-app.use("/api/menu",menuRoutes)
-
+app.use("/api/menu" ,menuRoutes);
+app.use("/api/cart" ,cartRoutes);
+app.use("/api/orders" ,orderRoutes)
 
 const errorMiddleware =require("./middlewares/errorMiddleware")
 app.use(errorMiddleware)
