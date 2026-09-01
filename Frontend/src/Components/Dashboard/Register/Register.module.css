@@ -1,5 +1,5 @@
 .page{
-    min-height: 100vh;
+    height: 100vh;
 }
 .customimg{
  width: 100%;
@@ -30,7 +30,7 @@ label{
     color: var(--brown-color);
 }
 input::placeholder{
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     color: rgb(189, 177, 177);
 }
 .custominp:hover,
@@ -57,4 +57,48 @@ input::placeholder{
 .dktxt{
     color: var( --darkorg-color);
     
+}
+.wrapper{
+    overflow: hidden;
+    position: relative;
+    min-height: 100vh;
+}
+.customimg{
+
+height: 100vh;
+background-repeat: no-repeat;
+background-position: center;
+background-size: cover;
+background-image: url("../../../assets/Login.png");
+transition: transform .5s ease;
+
+}
+.wrapper:hover .customimg {
+    transform: scale(1.06);
+}
+.overlay{
+     position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+.content{
+    
+    z-index: 2;
+    position: absolute;
+   
+width: 60%;
+   bottom: 4rem  ;
+   left: 2rem;
+}
+.header{
+ color: rgb(175, 125, 133);
+ font-family: var(--font-heading);
+ font-weight: bold;
+
+}
+.quote{
+color: whitesmoke;
+font-style: italic;
+font-weight: 430;
 }

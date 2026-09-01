@@ -1,5 +1,5 @@
 import styles from "./Register.module.css"
-import register from "../../../assets/Register.jpg"
+
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
@@ -50,9 +50,18 @@ setFormData({...formData,[e.target.name]: e.target.value})
         <>
         <div className={` d-flex justify-content-between ${styles.page} `}>
             
-            <div className="col-5" >
-                <img className={` ${styles.customimg}`} src={register} alt="" />
+           
+                 <div className={`${styles.wrapper} col-5`}>
+              <div className={`${styles.customimg}  `}>
             </div>
+            <div className={`${styles.overlay}`}></div>
+            <div className={`${styles.content}`}>
+         <h2 className={`${styles.header}`} >Aurora Dining</h2>
+  <h5 className={`${styles.quote}`}>"Experience the intersection of tradition and modern culinary precision."</h5>
+            </div>
+           
+            </div>
+            
              <div className={`${styles.Loginpg}  col-7`}>
                 <div>
                       <h3 className="fw-semibold">Aurora Dining</h3>
