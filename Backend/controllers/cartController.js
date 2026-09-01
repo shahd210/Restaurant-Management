@@ -16,7 +16,7 @@ if(!cart){
 }
    
     const totalPrice = cart.items.reduce((acc,item)=>{
-        return item.menuItem.price * item.quantity
+        return acc+ item.menuItem.price * item.quantity
     },0)
     
    res.status(200).json({
@@ -107,7 +107,7 @@ const updateCartItem = async (req ,res ,next)=>{
   await cart.save();
 
   await cart.populate("items.menuItem","name price emoji status")
-  const totalPrice = cart.reduce((acc,item)=>{
+  const totalPrice = cart.items.reduce((acc,item)=>{
     return acc + item.menuItem.price * item.quantity
   },0)
 
@@ -134,7 +134,7 @@ const removeFromCart = async (req ,res ,next)=>{
             });
         }
 
-        await cart.items.filter(
+        cart.items = cart.items.filter(
             (item)=> item.menuItem.toString() !== req.params.menuItemId
         )
         await cart.save();

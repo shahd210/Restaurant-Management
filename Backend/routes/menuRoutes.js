@@ -9,8 +9,8 @@ const {createItemSchema , updateItemSchema}=require("../middlewares/validation/m
 const {  getItems ,getItemById , createItem , updateItem , deleteItem} =
  require("../controllers/menuController")
 
-router.get("/",protect ,getItems)
-router.get("/:id" , protect , getItemById)
+router.get("/" ,getItems)
+router.get("/:id"  , getItemById)
 router.post("/",protect ,authorizeRole("admin"),validate(createItemSchema) ,createItem)
 router.put("/:id" ,protect ,authorizeRole("admin"),validate(updateItemSchema),updateItem)
 router.delete("/:id" , protect , authorizeRole("admin") ,deleteItem)

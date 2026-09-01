@@ -29,6 +29,10 @@ const createItemSchema = joi.object({
     .messages({
         "any.only": "Badge must be one of: vegetarian, gluten-free, popular"
     }),
+    image: joi.string().uri().allow("").optional()
+.messages({
+    "string.uri": "Image must be a valid URL"
+}),
     emoji: joi.string().allow("").optional(),
     status: joi.string().optional().default("active")
     .valid("active","out-of-stock")
@@ -52,6 +56,10 @@ const updateItemSchema = joi.object({
 .messages({
         "any.only": "Badge must be one of: vegetarian, gluten-free, popular"
     }),
+    image: joi.string().uri().allow("").optional()
+.messages({
+    "string.uri": "Image must be a valid URL"
+}),
     emoji: joi.string().allow("").optional(),
     status: joi.string().optional().default("active")
     .valid("active","out-of-stock")

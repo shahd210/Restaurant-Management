@@ -2,7 +2,18 @@ const menuItem = require("../models/MenuItem")
 
 const getItems = async (req , res ,next)=>{
  try {
-    const items = await menuItem.find();
+    const { category, badge } = req.query;
+    let filter = {};
+
+    if (category && category !== "all") {
+        filter.category = category;
+    }
+    if (badge && badge !== "all") {
+        filter.badge = badge;
+    }
+
+
+    const items = await menuItem.find(filter);
     res.status(200).json({
         success:true,
         count: items.length,
@@ -20,7 +31,7 @@ const getItems = async (req , res ,next)=>{
 const getItemById = async(req ,res,next)=>{
     try {
         const item = await menuItem.findById(req.params.id);
-    if(!item) res.status(404).json({
+    if(!item) return res.status(404).json({
         success:false,
         message:"Item Not Found",
     })
@@ -50,13 +61,13 @@ const updateItem = async (req ,res , next)=>{
             req.params.id ,
             req.body , {new:true}
         )
-        if(!updateItem) res.status(404).json({
+        if(!updatedItem) return res.status(404).json({
             success:false,
             message:"item not found"
         })
         res.status(200).json({
             success:true,
-            data:updateItem
+            data:updatedItem
         })
     } catch (error) {
         next(error)
@@ -66,7 +77,7 @@ const updateItem = async (req ,res , next)=>{
 const deleteItem = async (req,res ,next)=>{
     try {
         const deletedItem = await menuItem.findByIdAndDelete(req.params.id);
-        if(!deletedItem) res.status(404).json({
+        if(!deletedItem) return res.status(404).json({
             success:false,
             message:"item not found"
         })

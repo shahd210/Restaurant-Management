@@ -25,6 +25,10 @@ const ItemSchema = new mongoose.Schema({
         enum: ["vegetarian", "gluten-free", "popular", null],
         default: null,
     },
+    image:{
+    type:String,
+    default: "",
+},
     emoji:{
         type:String,
     },

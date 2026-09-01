@@ -38,7 +38,7 @@ const createOrder = async (req,res,next)=>{
             deliveryAddress: req.body.deliveryAddress,
         });
 
-        cart.item =[];
+        cart.items =[];
         await cart.save();
 
         res.status(201).json({

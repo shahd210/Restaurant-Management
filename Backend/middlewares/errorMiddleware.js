@@ -1,6 +1,33 @@
-const errorMiddleware = (err, req,res,next)=>{
-    res.status(500).json({
-        message:"Server Error" 
-    })
-}
+const errorMiddleware = (err, req, res, next) => {
+    console.error(err.stack);
+
+    if (err.name === "ValidationError") {
+        const messages = Object.values(err.errors).map((val) => val.message);
+        return res.status(400).json({
+            success: false,
+            message: messages.join(", "),
+        });
+    }
+
+    if (err.code === 11000) {
+        const field = Object.keys(err.keyValue)[0];
+        return res.status(400).json({
+            success: false,
+            message: `${field} already exists`,
+        });
+    }
+
+    if (err.name === "CastError") {
+        return res.status(400).json({
+            success: false,
+            message: `Invalid ${err.path}: ${err.value}`,
+        });
+    }
+
+    res.status(err.statusCode || 500).json({
+        success: false,
+        message: err.message || "Server Error",
+    });
+};
+
 module.exports = errorMiddleware;
